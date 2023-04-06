@@ -7,3 +7,18 @@ it('renders without crashing', () => {
   ReactDOM.render(<App />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
+
+// renders the form
+// renders the form with the correct label
+// renders the form with the correct input type
+// renders the form with the correct id
+
+it('renders the form', () => {
+  const wrapper = shallow(<App />);
+  expect(wrapper.find('FormItem').length).toEqual(1);
+});
+
+it('renders the form with the correct label', () => {
+  const wrapper = shallow(<App />);
+  expect(wrapper.find('FormItem').prop('label')).toEqual('Name');
+});
